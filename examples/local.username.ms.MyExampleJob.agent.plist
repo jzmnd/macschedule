@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>local.username.ms.MyExampleJob.agent</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/Users/username/.pyenv/versions/ms-env/bin/python</string>
+      <string>/Users/username/Documents/do_something.py</string>
+      <string>-w</string>
+    </array>
+    <key>EnvironmentVariables</key>
+    <dict>
+      <key>ENVVAR</key>
+      <string>example</string>
+    </dict>
+    <key>StartCalendarInterval</key>
+    <array>
+      <dict>
+        <key>Minute</key>
+        <integer>0</integer>
+        <key>Hour</key>
+        <integer>19</integer>
+        <key>Weekday</key>
+        <integer>1</integer>
+      </dict>
+    </array>
+    <key>ExitTimeOut</key>
+    <integer>60</integer>
+    <key>WorkingDirectory</key>
+    <string>/Users/username/Documents</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/local.username.ms.MyExampleJob.err</string>
+    <key>StandardOutPath</key>
+    <string>/tmp/local.username.ms.MyExampleJob.out</string>
+  </dict>
+</plist>
