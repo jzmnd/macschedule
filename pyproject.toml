@@ -6,10 +6,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "macschedule"
-version = "0.1.0"
+version = "0.1.1"
 authors = [
   { name = "Jez Smith", email = "j.smith.03@cantab.net" },
 ]
+description = "CLI utility for batch creating launchd agents on MacOS"
 license = { file = "LICENSE.md" }
 readme = "README.md"
 dependencies = [
@@ -20,6 +21,14 @@ dependencies = [
   "pyyaml",
 ]
 requires-python = ">= 3.8"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: MacOS",
+]
 
 [project.scripts]
 msch = "macschedule.cli:cli"
+
+[project.urls]
+Homepage = "https://github.com/jzmnd/macschedule"
