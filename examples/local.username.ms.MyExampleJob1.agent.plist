@@ -3,7 +3,7 @@
 <plist version="1.0">
   <dict>
     <key>Label</key>
-    <string>local.username.ms.MyExampleJob.agent</string>
+    <string>local.username.ms.MyExampleJob1.agent</string>
     <key>ProgramArguments</key>
     <array>
       <string>/Users/username/.pyenv/versions/ms-env/bin/python</string>
@@ -31,8 +31,8 @@
     <key>WorkingDirectory</key>
     <string>/Users/username/Documents</string>
     <key>StandardErrorPath</key>
-    <string>/tmp/local.username.ms.MyExampleJob.err</string>
+    <string>/Users/username/Library/Logs/macschedule/local.username.ms.MyExampleJob1.err</string>
     <key>StandardOutPath</key>
-    <string>/tmp/local.username.ms.MyExampleJob.out</string>
+    <string>/Users/username/Library/Logs/macschedule/local.username.ms.MyExampleJob1.out</string>
   </dict>
 </plist>

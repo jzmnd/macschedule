@@ -55,7 +55,7 @@ Get help:
 msch --help
 ```
 
-See `/examples/` for an example job configuration and its generated `.plist` file.
+See `/examples/` for example job configurations and their generated `.plist` files.
 
 ## More information
 

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>local.username.ms.MyExampleJob3.agent</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/bin/bash</string>
+      <string>/Users/username/Documents/do_something.sh</string>
+    </array>
+    <key>EnvironmentVariables</key>
+    <dict>
+      <key>USER</key>
+      <string>user1</string>
+      <key>PASSWORD</key>
+      <string>secretpw</string>
+    </dict>
+    <key>StartInterval</key>
+    <integer>7200</integer>
+    <key>ExitTimeOut</key>
+    <integer>120</integer>
+    <key>WorkingDirectory</key>
+    <string>/Users/username/Documents</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/username/Library/Logs/macschedule/local.username.ms.MyExampleJob3.err</string>
+    <key>StandardOutPath</key>
+    <string>/Users/username/Library/Logs/macschedule/local.username.ms.MyExampleJob3.out</string>
+  </dict>
+</plist>

@@ -1,24 +1,18 @@
 # name the job, this will define the Label and .plist file name
-name: MyExampleJob
+name: MyExampleJob3
 job:
   # provide path the binary to execute e.g. python or bash
-  binpath: ~/.pyenv/versions/ms-env/bin/python
+  binpath: /bin/bash
   # provide the file to run
-  file: ~/Documents/do_something.py
-  # optionally provide additional arguments to the command
-  args: ["-w"]
+  file: ~/Documents/do_something.sh
   # optionally provide any environment variables that are required
   env:
-    ENVVAR: example
+    USER: user1
+    PASSWORD: secretpw
 # provide one of interval (StartInterval) or schedule or cron (StartCalendarInterval)
-schedule:
-  weekday: 1
-  hour: 19
-  minute: 0
-cron: 0 19 * * 1
 interval:
   hours: 2
 # optionally provide the timeout in seconds (ExitTimeOut) (default = 30)
-exittimeout: 60
+exittimeout: 120
 # optionally provide the working directory to run the script from (WorkingDirectory) (default = ~)
 workingdir: ~/Documents

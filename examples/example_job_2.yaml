@@ -1,0 +1,11 @@
+# name the job, this will define the Label and .plist file name
+name: MyExampleJob2
+job:
+  # provide path the binary to execute e.g. python or bash
+  binpath: /opt/homebrew/bin/zsh
+  # provide the file to run
+  file: ~/Documents/do_something.sh
+  # optionally provide additional arguments to the command
+  args: ["--file", "inputfile.csv"]
+# provide one of interval (StartInterval) or schedule or cron (StartCalendarInterval)
+cron: 0,30 * * * 1-5
