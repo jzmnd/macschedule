@@ -45,9 +45,9 @@ msch logs --stream=stderr --tail=10 jobs/*
 Cleanup and remove the `.plist` files that were generated in the first step:
 ```bash
 # check what will be deleted
-msch unload --dry-run jobs/*
+msch remove --dry-run jobs/*
 # if everything looks good delete the files
-msch unload jobs/*
+msch remove jobs/*
 ```
 
 Get help:
