@@ -77,10 +77,14 @@ def remove(dry_run, jobfiles):
     for jobfile, config in _read_configs(jobfiles):
         if dry_run:
             if os.path.exists(config.output_filepath()):
-                click.secho(f"{jobfile} -> Would remove {config.output_filepath()}", fg="yellow")
+                click.secho(
+                    f"{jobfile} -> Would remove {config.output_filepath()}", fg="yellow"
+                )
         else:
             if os.path.exists(config.output_filepath()):
-                click.secho(f"{jobfile} -> Removing {config.output_filepath()}", fg="yellow")
+                click.secho(
+                    f"{jobfile} -> Removing {config.output_filepath()}", fg="yellow"
+                )
                 os.remove(config.output_filepath())
     click.secho("Done", bold=True)
 
@@ -126,7 +130,9 @@ def unload(jobfiles):
     type=click.Choice(["stdout", "stderr"]),
     help="Print stdout or stderr logs.",
 )
-@click.option("--tail", default=10, type=int, help="Number of lines to tail on the log.")
+@click.option(
+    "--tail", default=10, type=int, help="Number of lines to tail on the log."
+)
 @click.argument("jobfiles", nargs=-1, type=click.Path(exists=True))
 def logs(stream, tail, jobfiles):
     """View logs for given jobs.
@@ -137,7 +143,9 @@ def logs(stream, tail, jobfiles):
     for jobfile, config in _read_configs(jobfiles):
         log = LaunchdLogReader(config).read(stream, tail)
         if log is None:
-            click.secho(f"{jobfile} -> No log file. Job may have not run yet.", fg="red")
+            click.secho(
+                f"{jobfile} -> No log file. Job may have not run yet.", fg="red"
+            )
         else:
             click.secho(f"{jobfile} ->", fg="blue")
             click.echo(log)

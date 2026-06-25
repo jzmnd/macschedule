@@ -29,21 +29,18 @@ class LauchdConfigBase(Generic[T], ABC):
 
 
 class StringConfig(LauchdConfigBase[str]):
-
     def _generate_data(self) -> None:
         string = etree.SubElement(self.parent_element, "string")
         string.text = self.data
 
 
 class IntegerConfig(LauchdConfigBase[int]):
-
     def _generate_data(self) -> None:
         integer = etree.SubElement(self.parent_element, "integer")
         integer.text = str(self.data)
 
 
 class ArrStringConfig(LauchdConfigBase[List[str]]):
-
     def _generate_data(self) -> None:
         array = etree.SubElement(self.parent_element, "array")
         for s in self.data:
@@ -52,7 +49,6 @@ class ArrStringConfig(LauchdConfigBase[List[str]]):
 
 
 class DictStringConfig(LauchdConfigBase[Dict[str, str]]):
-
     def _generate_data(self) -> None:
         dict_elem = etree.SubElement(self.parent_element, "dict")
         for k, v in self.data.items():
@@ -63,7 +59,6 @@ class DictStringConfig(LauchdConfigBase[Dict[str, str]]):
 
 
 class ArrDictIntegerConfig(LauchdConfigBase[List[Dict[str, int]]]):
-
     def _generate_data(self) -> None:
         array = etree.SubElement(self.parent_element, "array")
         for d in self.data:

@@ -32,3 +32,8 @@ msch = "macschedule.cli:cli"
 
 [project.urls]
 Homepage = "https://github.com/jzmnd/macschedule"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.20",
+]

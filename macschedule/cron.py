@@ -23,7 +23,9 @@ def cron_to_schedules(cron: str) -> List[Schedule]:
     The function uses itertools.product to get all the combinations of time periods in this case.
     """
     cron_c = Cron(cron)
-    non_full_parts = {part.unit["name"]: part.values for part in cron_c.parts if not part.is_full()}
+    non_full_parts = {
+        part.unit["name"]: part.values for part in cron_c.parts if not part.is_full()
+    }
     return [
         Schedule(**dict(zip(non_full_parts.keys(), part_vals)))
         for part_vals in product(*non_full_parts.values())

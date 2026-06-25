@@ -59,7 +59,9 @@ class JobConfig:
         jobconfig = from_dict(data_class=cls, data=config)
         if jobconfig.schedule or jobconfig.cron or jobconfig.interval:
             return jobconfig
-        raise ValueError("Missing one of schedule, cron, or interval in the job configuration.")
+        raise ValueError(
+            "Missing one of schedule, cron, or interval in the job configuration."
+        )
 
     def full_job_name(self) -> str:
         user_name = getpass.getuser()
